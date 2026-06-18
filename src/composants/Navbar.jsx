@@ -13,52 +13,66 @@ const Navbar = () => {
     }
 
     return (
-        <div className='w-full h-[10vh] flex items-center justify-between px-10 bg-slate-900 shadow-lg'>
+        <div className='w-full h-[10vh] bg-slate-950 flex items-center justify-between px-12 border-b border-slate-800'>
 
+            {/* Logo */}
             <NavLink
                 to="/"
                 className='text-3xl font-bold text-white'
             >
-                Logo
+                Dev<span className='text-cyan-400'>bocar</span>
             </NavLink>
 
-            <div className="flex items-center gap-5">
+            {/* Menu */}
+            <div className='flex items-center gap-10'>
+
+                <NavLink
+                    to="/"
+                    className='text-slate-300 font-medium hover:text-cyan-400 duration-300'
+                >
+                    Accueil
+                </NavLink>
 
                 <NavLink
                     to="/profil"
-                    className='text-white font-medium hover:text-yellow-400 transition duration-300'
+                    className='text-slate-300 font-medium hover:text-cyan-400 duration-300'
                 >
                     Profil
                 </NavLink>
+
+            </div>
+
+            {/* Boutons */}
+            <div className="flex items-center gap-4">
 
                 {
                     token ? (
 
                         <button
                             onClick={() => Deconnexion()}
-                            className="bg-red-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition duration-300"
+                            className="bg-red-600 px-6 py-3 rounded-full text-white font-semibold hover:bg-red-700 duration-300"
                         >
                             Se déconnecter
                         </button>
 
                     ) : (
-                        <div className="flex items-center gap-3">
 
+                        <>
                             <NavLink
                                 to="/connexion"
-                                className="bg-yellow-500 text-white px-6 py-2 rounded-lg font-bold hover:bg-yellow-600 transition duration-300"
+                                className="text-white border border-slate-700 px-6 py-3 rounded-full hover:bg-slate-800 duration-300"
                             >
                                 Connexion
                             </NavLink>
 
                             <NavLink
                                 to="/inscription"
-                                className="bg-green-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-green-700 transition duration-300"
+                                className="bg-cyan-500 px-6 py-3 rounded-full text-white font-semibold hover:bg-cyan-600 duration-300"
                             >
                                 Inscription
                             </NavLink>
+                        </>
 
-                        </div>
                     )
                 }
 
