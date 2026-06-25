@@ -20,7 +20,7 @@ const Navbar = () => {
                 to="/"
                 className='text-3xl font-bold text-white'
             >
-                Dev<span className='text-cyan-400'>bocar</span>
+                <span className='text-cyan-400'>Mini Stack Overflow </span>
             </NavLink>
 
             {/* Menu */}
